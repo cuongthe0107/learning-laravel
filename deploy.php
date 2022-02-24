@@ -3,11 +3,12 @@ namespace Deployer;
 require 'recipe/laravel.php';
 
 // Configuration
+set('application', 'learning');
 
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
 
-set('repository', 'git@domain.com:username/repository.git');
+set('repository', 'https://github.com/cuongthe0107/learning-laravel.git');
 
 add('shared_files', []);
 add('shared_dirs', []);
@@ -21,7 +22,6 @@ server('production', 'domain.com')
     ->identityFile()
     ->set('deploy_path', '/var/www/domain.com')
     ->pty(true);
-
 
 // Tasks
 
